@@ -1,0 +1,47 @@
+:root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; background: #f3f6fb; color: #1d293d; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 770px; }
+.layout { max-width: 1200px; margin: 0 auto; padding: 30px 34px 20px; }
+.hero { display: flex; justify-content: space-between; gap: 20px; align-items: center; border-radius: 17px; background: #172a49; color: white; padding: 27px 30px; margin-bottom: 22px; }
+.eyebrow { color: #9ec1f9; text-transform: uppercase; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; }
+h1 { font-size: 29px; letter-spacing: -.6px; margin: 9px 0 7px; line-height: 1.12; }
+.hero p { color: #c4d2e8; margin: 0; font-size: 13px; }
+.student { border-left: 1px solid #455a79; padding-left: 20px; display: grid; gap: 5px; text-align: right; white-space: nowrap; }
+.student span,.student small { color: #b7c7dd; font-size: 12px; }
+.student strong { font-size: 13px; }
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 19px; align-items: stretch; }
+.panel { border: 1px solid #dce4f0; background: white; border-radius: 16px; padding: 24px; box-shadow: 0 8px 25px rgba(32, 56, 98, .04); display: flex; flex-direction: column; min-height: 465px; }
+.panel-heading { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; margin-bottom: 19px; }
+.section-index { color: #366dca; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; }
+h2 { font-size: 20px; margin: 7px 0 6px; line-height: 1.2; }
+.panel-heading p { font-size: 12px; color: #728097; margin: 0; line-height: 1.5; }
+.counter,.note-glyph { display: grid; place-items: center; background: #ebf2fe; border-radius: 10px; color: #2261bd; font-weight: 750; font-size: 18px; flex: none; min-width: 42px; height: 42px; }
+.note-glyph { font-size: 11px; letter-spacing: 1px; }
+.path-bar { background: #f5f7fa; border: 1px solid #e4e9f1; border-radius: 9px; padding: 10px 13px; margin-bottom: 13px; }
+.path-label { display: block; color: #8a97aa; font-size: 9px; letter-spacing: 1.1px; font-weight: bold; }
+.path-value { display: block; margin-top: 5px; font-size: 12px; overflow-wrap: anywhere; color: #34465e; }
+.btn { font: inherit; font-weight: 650; cursor: pointer; border: 0; border-radius: 9px; padding: 12px 16px; transition: background .2s; text-align: center; }
+.btn:disabled { opacity: .55; cursor: progress; }
+.btn-secondary { color: #245ca9; background: #eaf1ff; }
+.btn-secondary:hover:not(:disabled) { background: #dbe8ff; }
+.btn-primary { color: white; background: #245fb9; margin-top: 13px; }
+.btn-primary:hover:not(:disabled) { background: #174991; }
+.list-wrap { margin-top: 13px; border: 1px solid #e5eaf2; border-radius: 9px; height: 205px; overflow-y: auto; background: #fcfdff; }
+.directory-list { margin: 0; padding: 4px 10px; list-style: none; }
+.file-entry { display: flex; gap: 9px; align-items: center; border-bottom: 1px solid #edf1f6; padding: 8px 6px; font-size: 12px; }
+.file-entry:last-child { border: none; }
+.file-icon { color: #96a4ba; font-size: 17px; }
+.directory-icon { color: #5284cd; }
+.file-name { overflow-wrap: anywhere; flex: 1; }
+.directory-name { font-weight: 700; }
+.file-type { color: #8898aa; font-size: 10px; }
+.empty-list { color: #73849b; padding: 16px; }
+.field-label { font-size: 10px; letter-spacing: 1.1px; font-weight: 750; color: #77869c; display: block; margin-bottom: 9px; }
+textarea { font: 13px/1.65 Consolas, "Segoe UI", sans-serif; width: 100%; height: 242px; border: 1px solid #d8e2ef; background: #fcfdff; padding: 14px; border-radius: 10px; resize: vertical; outline: none; color: #314158; }
+textarea:focus { border-color: #6697e5; box-shadow: 0 0 0 3px #eaf2ff; }
+.status { min-height: 28px; font-size: 11px; color: #75859b; line-height: 1.5; overflow-wrap: anywhere; margin: 13px 0 0; }
+.status[data-kind=success] { color: #22734b; }
+.status[data-kind=error] { color: #ad3434; }
+.hint { margin-top: auto; background: #f5f8fd; border-left: 3px solid #b1c9eb; padding: 12px; font-size: 11px; line-height: 1.55; color: #566b88; }
+footer { margin-top: 18px; display: flex; justify-content: space-between; color: #7d8ca2; font-size: 11px; }
+@media (max-width: 850px) { .layout { padding: 20px 18px; } .columns { gap: 12px; } .panel { padding: 17px; } .hero { padding: 22px; } .hero h1 { font-size: 25px; } }

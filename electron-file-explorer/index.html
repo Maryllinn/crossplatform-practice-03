@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Electron File Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="renderer.js"></script>
+</head>
+<body>
+  <main class="layout">
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Практическая работа № 3 · Вариант 3</div>
+        <h1>Electron File Explorer</h1>
+        <p>Просмотр рабочего каталога и сохранение заметок через безопасный IPC</p>
+      </div>
+      <div class="student">
+        <span>Выполнила</span>
+        <strong>Хамадалиева Эльвира</strong>
+        <small>ТРПО23-3</small>
+      </div>
+    </header>
+
+    <div class="columns">
+      <section class="panel" aria-labelledby="dir-heading">
+        <div class="panel-heading">
+          <div>
+            <div class="section-index">ЗАДАНИЕ 3</div>
+            <h2 id="dir-heading">Содержимое каталога</h2>
+            <p>Файлы читаются в главном процессе через Node.js fs</p>
+          </div>
+          <span class="counter" id="item-count">0</span>
+        </div>
+        <div class="path-bar">
+          <span class="path-label">РАБОЧАЯ ПАПКА</span>
+          <span class="path-value" id="directory-path">Загрузка…</span>
+        </div>
+        <button type="button" class="btn btn-secondary" id="show-directory">Показать содержимое каталога</button>
+        <div class="list-wrap">
+          <ul class="directory-list" id="directory-list" aria-live="polite"></ul>
+        </div>
+        <p class="status" id="file-status" role="status">Ожидание…</p>
+      </section>
+
+      <section class="panel" aria-labelledby="note-heading">
+        <div class="panel-heading">
+          <div>
+            <div class="section-index">ВАРИАНТ 3</div>
+            <h2 id="note-heading">Сохранение заметки</h2>
+            <p>Выбор файла через системное окно Windows</p>
+          </div>
+          <span class="note-glyph">TXT</span>
+        </div>
+        <label for="note-text" class="field-label">ТЕКСТ ЗАМЕТКИ</label>
+        <textarea id="note-text" spellcheck="true">Практическая работа № 3 по дисциплине «Кросс-платформенная разработка».
+Вариант 3: сохранение заметки в текстовый файл.
+Выполнила: Хамадалиева Эльвира, ТРПО23-3.</textarea>
+        <button type="button" class="btn btn-primary" id="save-note">Сохранить заметку</button>
+        <p class="status" id="note-status" role="status">Здесь появится путь к сохранённому файлу.</p>
+        <div class="hint"><strong>Как это работает:</strong> интерфейс обращается к preload.js, а main.js открывает системный диалог и записывает TXT-файл в UTF-8.</div>
+      </section>
+    </div>
+    <footer>Electron · Chromium · Node.js <span>contextIsolation: true · nodeIntegration: false</span></footer>
+  </main>
+</body>
+</html>

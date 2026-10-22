@@ -1,0 +1,43 @@
+{
+  "name": "electron-file-explorer",
+  "version": "1.0.0",
+  "description": "Практическая работа № 3: просмотр каталога и сохранение заметки на Electron",
+  "author": "Хамадалиева Эльвира Дамировна",
+  "license": "MIT",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "dist:win": "electron-builder --win nsis",
+    "check": "node --check main.js && node --check preload.js && node --check renderer.js"
+  },
+  "devDependencies": {
+    "electron": "44.7.2",
+    "electron-builder": "26.16.1"
+  },
+  "build": {
+    "appId": "ru.fa.student.fileexplorer",
+    "productName": "Electron File Explorer",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}
